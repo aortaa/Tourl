@@ -65,7 +65,7 @@ for (const value of formData.values()) {
     }
     filteredFormData.append("file", value); // Pastikan key adalah "file"
 }
-const response = await fetch('https://telegra.ph/upload', {
+const response = await fetch('https://wanzofc-ai.biz.id//upload', {
     method: 'POST',
     body: filteredFormData,
     headers: {
