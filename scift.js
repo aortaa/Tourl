@@ -66,9 +66,7 @@ async function uploadImages(event) {
             }
             filteredFormData.append(key, value);
         }
-
-        const bingko = 'https://telegraph.zorner.men/upload';
-const response = await fetch(bingko, {
+const response = await fetch('https://telegraph.zorner.men/upload', {
     method: 'POST',
     body: filteredFormData
 });
