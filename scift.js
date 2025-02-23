@@ -59,13 +59,12 @@ async function uploadImages(event) {
 
     try {
         const filteredFormData = new FormData();
-        for (const [key, value] of formData.entries()) {
-            if (value instanceof File && value.size >= 5 * 1024 * 1024) {
-                //console.warn(`File ${value.name} exceeds 5MB and will not be uploaded.`);
-                continue;
-            }
-            filteredFormData.append(key, value);
-        }
+for (const value of formData.values()) {
+    if (value instanceof File && value.size >= 5 * 1024 * 1024) {
+        continue; // Skip file yang lebih dari 5MB
+    }
+    filteredFormData.append("file", value); // Pastikan key adalah "file"
+}
 const response = await fetch('https://telegraph.zorner.men/upload', {
     method: 'POST',
     body: filteredFormData
