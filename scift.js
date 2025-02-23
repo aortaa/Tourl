@@ -67,7 +67,10 @@ for (const value of formData.values()) {
 }
 const response = await fetch('https://telegraph.zorner.men/upload', {
     method: 'POST',
-    body: filteredFormData
+    body: filteredFormData,
+    headers: {
+        "Accept": "application/json" // Pastikan server menerima JSON
+    }
 });
 
         let result;
