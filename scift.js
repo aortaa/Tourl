@@ -65,7 +65,7 @@ for (const value of formData.values()) {
     }
     filteredFormData.append("file", value); // Pastikan key adalah "file"
 }
-const response = await fetch('https://telegraph.zorner.men/upload', {
+const response = await fetch('https://telegra.ph/upload', {
     method: 'POST',
     body: filteredFormData,
     headers: {
